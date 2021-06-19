@@ -1,8 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useScroll } from './hooks/use-scroll';
 
 function App() {
+  useScroll({
+    onScroll: () => {
+      console.log('hey')
+    }
+  })
   return (
     <>
       <div className="App">
