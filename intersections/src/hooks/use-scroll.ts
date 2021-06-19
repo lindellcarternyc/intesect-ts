@@ -8,7 +8,10 @@ const useScroll = ({
   onScroll
 }: UseScrollArgs) => {
   useLayoutEffect(() => {
-    window.addEventListener('scroll', () => onScroll())
+    console.log('add listener')
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
   })
 }
 
